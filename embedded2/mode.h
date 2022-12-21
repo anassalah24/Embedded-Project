@@ -2,30 +2,30 @@
 #define __MODE_H__
 
 
-
-#include "lcd.h"
-#include "keypad.h"
-#include "driverlib/sysctl.h"
-#include <stdio.h>
-#include "tm4c123gh6pm.h"
-#include "Delay.h"
 #include <stdbool.h>
 #include <stdint.h>
-#include "inc/hw_memmap.h"
+#include "lcd.h"
+#include "keypad.h"
+#include <stdio.h>
+#include "calculator.h"
+#include "keypad.h"  
+#include "timer.h"
+#include "stop.h"  
+#include "mode.h"   
 #include "driverlib/sysctl.h"
+#include "inc/hw_types.h"
 #include "driverlib/gpio.h"
-#include "string.h"
+#include "inc/hw_memmap.h"
+#include "driverlib/systick.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/timer.h"
 
 #define calculator 1
 #define timer 2
 #define stopwatch 3
 
-extern volatile int state;
-
-
-void initmode();
-
-int getmodebutton();
+void gpioHandler();
+void modeinit();
 
 
 #endif

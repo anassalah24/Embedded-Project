@@ -62,7 +62,7 @@
         <CStepIntDis>_ 0</CStepIntDis>
     </LmiFtdiDriver>
     <DebugChecksum>
-        <Checksum>4278026161</Checksum>
+        <Checksum>2683496589</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -94,7 +94,11 @@
         <Count>0</Count>
     </Breakpoints2>
     <Aliases>
-        <Count>0</Count>
+        <A0>_ "C:\Jenkins\workspace\TivaWare-Git-Release\DriverLib\build\DriverLib.test\driverlib\cpu.c" ""</A0>
+        <A1>_ "C:\Jenkins\workspace\TivaWare-Git-Release\DriverLib\build\DriverLib.test\driverlib\gpio.c" ""</A1>
+        <A2>_ "C:\Jenkins\workspace\TivaWare-Git-Release\DriverLib\build\DriverLib.test\driverlib\interrupt.c" ""</A2>
+        <A3>_ "C:\Jenkins\workspace\TivaWare-Git-Release\DriverLib\build\DriverLib.test\driverlib\sysctl.c" ""</A3>
+        <Count>4</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
 </settings>

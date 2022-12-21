@@ -54,6 +54,16 @@ build D$:\Projects\embedded2\Debug\BrowseInfo\mode.xcl : COMPILER_XCL
   flags = D$:\Projects\embedded2\mode.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\Projects\embedded2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros D$:\Projects\embedded2\Debug\BrowseInfo\mode.tmp
   rspfile_name = D$:\Projects\embedded2\Debug\BrowseInfo\mode.xcl.rsp
 
+build D$:\Projects\embedded2\Debug\BrowseInfo\stop.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Projects\embedded2\stop.c -xcl_file D$:\Projects\embedded2\Debug\BrowseInfo\stop.xcl -macro_file D$:\Projects\embedded2\Debug\BrowseInfo\stop.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Projects\embedded2\stop.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\Projects\embedded2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros D$:\Projects\embedded2\Debug\BrowseInfo\stop.tmp
+  rspfile_name = D$:\Projects\embedded2\Debug\BrowseInfo\stop.xcl.rsp
+
+build D$:\Projects\embedded2\Debug\BrowseInfo\timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Projects\embedded2\timer.c -xcl_file D$:\Projects\embedded2\Debug\BrowseInfo\timer.xcl -macro_file D$:\Projects\embedded2\Debug\BrowseInfo\timer.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Projects\embedded2\timer.c -D ewarmPART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o D$:\Projects\embedded2\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -Ol --predef_macros D$:\Projects\embedded2\Debug\BrowseInfo\timer.tmp
+  rspfile_name = D$:\Projects\embedded2\Debug\BrowseInfo\timer.xcl.rsp
+
 build D$:\Projects\embedded2\Debug\BrowseInfo\calculator.pbi : INDEXER D$:\Projects\embedded2\Debug\BrowseInfo\calculator.xcl |  $
 D$:\Projects\embedded2\calculator.c
   flags = -out=D$:\Projects\embedded2\Debug\BrowseInfo\calculator.pbi -f D$:\Projects\embedded2\Debug\BrowseInfo\calculator.xcl
@@ -78,20 +88,30 @@ build D$:\Projects\embedded2\Debug\BrowseInfo\mode.pbi : INDEXER D$:\Projects\em
 D$:\Projects\embedded2\mode.c
   flags = -out=D$:\Projects\embedded2\Debug\BrowseInfo\mode.pbi -f D$:\Projects\embedded2\Debug\BrowseInfo\mode.xcl
 
+build D$:\Projects\embedded2\Debug\BrowseInfo\stop.pbi : INDEXER D$:\Projects\embedded2\Debug\BrowseInfo\stop.xcl |  $
+D$:\Projects\embedded2\stop.c
+  flags = -out=D$:\Projects\embedded2\Debug\BrowseInfo\stop.pbi -f D$:\Projects\embedded2\Debug\BrowseInfo\stop.xcl
+
+build D$:\Projects\embedded2\Debug\BrowseInfo\timer.pbi : INDEXER D$:\Projects\embedded2\Debug\BrowseInfo\timer.xcl |  $
+D$:\Projects\embedded2\timer.c
+  flags = -out=D$:\Projects\embedded2\Debug\BrowseInfo\timer.pbi -f D$:\Projects\embedded2\Debug\BrowseInfo\timer.xcl
+
 build D$:\Projects\embedded2\Debug\BrowseInfo\project2.pbw : MAKEBROWSE D$:\Projects\embedded2\Debug\BrowseInfo\project2.pbd
   flags = D$:\Projects\embedded2\Debug\BrowseInfo\project2.pbd -output D$:\Projects\embedded2\Debug\BrowseInfo\project2.pbw
 
 build D$:\Projects\embedded2\Debug\BrowseInfo\project2_part0.pbi : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\calculator.pbi |  $
-D$:\Projects\embedded2\Debug\BrowseInfo\delay.pbi
-  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part0.pbi D$:\Projects\embedded2\Debug\BrowseInfo\calculator.pbi D$:\Projects\embedded2\Debug\BrowseInfo\delay.pbi
+D$:\Projects\embedded2\Debug\BrowseInfo\delay.pbi $
+D$:\Projects\embedded2\Debug\BrowseInfo\keypad.pbi
+  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part0.pbi D$:\Projects\embedded2\Debug\BrowseInfo\calculator.pbi D$:\Projects\embedded2\Debug\BrowseInfo\delay.pbi D$:\Projects\embedded2\Debug\BrowseInfo\keypad.pbi
 
-build D$:\Projects\embedded2\Debug\BrowseInfo\project2_part1.pbi : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\keypad.pbi |  $
-D$:\Projects\embedded2\Debug\BrowseInfo\lcd.pbi
-  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part1.pbi D$:\Projects\embedded2\Debug\BrowseInfo\keypad.pbi D$:\Projects\embedded2\Debug\BrowseInfo\lcd.pbi
-
-build D$:\Projects\embedded2\Debug\BrowseInfo\project2_part2.pbi : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\main.pbi |  $
+build D$:\Projects\embedded2\Debug\BrowseInfo\project2_part1.pbi : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\lcd.pbi |  $
+D$:\Projects\embedded2\Debug\BrowseInfo\main.pbi $
 D$:\Projects\embedded2\Debug\BrowseInfo\mode.pbi
-  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part2.pbi D$:\Projects\embedded2\Debug\BrowseInfo\main.pbi D$:\Projects\embedded2\Debug\BrowseInfo\mode.pbi
+  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part1.pbi D$:\Projects\embedded2\Debug\BrowseInfo\lcd.pbi D$:\Projects\embedded2\Debug\BrowseInfo\main.pbi D$:\Projects\embedded2\Debug\BrowseInfo\mode.pbi
+
+build D$:\Projects\embedded2\Debug\BrowseInfo\project2_part2.pbi : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\stop.pbi |  $
+D$:\Projects\embedded2\Debug\BrowseInfo\timer.pbi
+  flags = -M D$:\Projects\embedded2\Debug\BrowseInfo\project2_part2.pbi D$:\Projects\embedded2\Debug\BrowseInfo\stop.pbi D$:\Projects\embedded2\Debug\BrowseInfo\timer.pbi
 
 build D$:\Projects\embedded2\Debug\BrowseInfo\project2.pbd : PDBLINK D$:\Projects\embedded2\Debug\BrowseInfo\project2_part0.pbi |  $
 D$:\Projects\embedded2\Debug\BrowseInfo\project2_part1.pbi $

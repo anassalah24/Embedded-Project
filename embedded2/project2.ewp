@@ -2176,6 +2176,18 @@
         <name>$PROJ_DIR$\mode.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\stop.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\stop.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\timer.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\timer.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\tm4c123gh6pm.h</name>
     </file>
 </project>

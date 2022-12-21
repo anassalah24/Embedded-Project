@@ -14,6 +14,7 @@
 #define  padCols  4
 
 void keypad_Init       (void);
-char keypad_getkey     (void);
-
+char keypad_getkeycalc     (void);
+char keypad_getkeytim     (void);
+char keypad_getkeystop     (void);
 #endif

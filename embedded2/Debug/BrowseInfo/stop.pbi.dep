@@ -1,5 +1,5 @@
-D:\Projects\embedded2\Debug\BrowseInfo\main.pbi: \
-  D:\Projects\embedded2\main.c \
+D:\Projects\embedded2\Debug\BrowseInfo\stop.pbi: \
+  D:\Projects\embedded2\stop.c \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdbool.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdint.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ycheck.h \
@@ -7,20 +7,22 @@ D:\Projects\embedded2\Debug\BrowseInfo\main.pbi: \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Defaults.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Config_Normal.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product.h \
-  D:\Projects\embedded2\lcd.h D:\Projects\embedded2\keypad.h \
-  D:\Projects\embedded2\tm4c123gh6pm.h D:\Projects\embedded2\Delay.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdio.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ysizet.h \
-  D:\Projects\embedded2\calculator.h \
-  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h \
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\string.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ysizet.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product_string.h \
-  D:\Projects\embedded2\timer.h \
+  D:\Projects\embedded2\calculator.h D:\Projects\embedded2\lcd.h \
+  D:\Projects\embedded2\keypad.h D:\Projects\embedded2\tm4c123gh6pm.h \
+  D:\Projects\embedded2\Delay.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdio.h \
+  D:\Projects\embedded2\mode.h D:\Projects\embedded2\timer.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_ints.h \
-  D:\Projects\embedded2\stop.h D:\Projects\embedded2\mode.h \
+  D:\Projects\embedded2\stop.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\systick.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\interrupt.h \
-  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\timer.h
+  C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\timer.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\time.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\time64.h

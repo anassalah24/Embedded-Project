@@ -8,20 +8,22 @@
 #include "calculator.h"
 #include "mode.h"
 
+/*THIS IS THE CALCULATOR MODE .c FILE*/
 
+// variables used in calculations 
+static float firstNum = 0;
+static float secondNum = 0;
+static char operation = 'N';
+static float answer = 0;
 
-int firstNum = 0;
-int secondNum = 0;
-char operation = 'N';
-int answer = 0;
+extern volatile int state;
 
-
-
+//This function transforms the answer variable (int) into string so it can be displayed on the LCD
 void show_answer(){
     
   char answerStr[10];
-
-  sprintf(answerStr, "%d", answer);
+  //int to str
+  sprintf(answerStr, "%f", answer);
   
   LCD_Clear();
   LCD_PrintLn(0,"Calculator Mode");
@@ -34,7 +36,7 @@ void show_answer(){
 }
 
 
-
+//This functions simply performs the calculation on firstNum and secondNum using operation used
 void calc(){
     
   switch (operation){
@@ -66,59 +68,68 @@ void calc(){
 }
 
 
+// This is the main loop for this mode which enables user to enter digits and operation and construct numbers from string passed to LCD from keypad
+// This loop stays in the calculator mode as long as global external state variable is 1
 
 void calcMode(){
         int i = 0;
         volatile char key;
         LCD_PrintLn(0,"Calculator Mode");
-        SysCtlDelay(80000000/3); //Delay
+        
+        //show last stored answer
+        
+        char answerStr[9];
+        char lastanswerstr[] = "Last Ans:";
+        sprintf(answerStr, "%f", answer);
+        strcat(lastanswerstr,answerStr);
+        LCD_PrintLn(1,lastanswerstr);
+        firstNum=0;
+        secondNum=0;
         LCD_Cursor(1,i);
         i++;
-
         
-        while (state == calculator) {
-           if (getmodebutton()==0){
-              state = timer;
-              printf("%d",state); 
-              
-           } 
-           key = keypad_getkey();
+        
+        while (state == 1) {
+          
            
-
+          // get value from keypad
+           key = keypad_getkeycalc();
            
+           if(key == 'q'){continue;}
+           
+           //clear screen
            if(key == 'c'){
-              answer = 0;
               i=0;
               LCD_Clear();
               LCD_PrintLn(0,"Calculator Mode");
               LCD_Cursor(1,i);
               i++;
-//              continue;
+              firstNum=0;
+              secondNum=0;
+              continue;
            }
-           
+           //user entered a digit an has not yet entered an operation so its the first number 
            if ((key != '+' && key != '-' && key != '/' && key != '=' && key != 'x') && (operation == 'N')){
-                
-//                printf("%s","first number is = ");           
+                           
                 firstNum = (firstNum*10) + (((int)(key))-48);
-//                printf("%d\n",firstNum);  
              
            }
+           //user entered a digit after entering an operation so its the second number
            else if ((key != '+' && key != '-' && key != '/' && key != '=' && key != 'x') && (operation != 'N')){
-//                printf("%s","second number is = "); 
+
                 secondNum = (secondNum*10) + (((int)(key))-48);
-//                printf("%d\n",secondNum);             
-           }
            
+           }
+           //calculate
            else if ( key == '=' ){          
               calc();
-//              continue;
+              continue;
                 
            }
-           
+           //user entered a mathematical operation
            else if((key == '+' || key == '-' || key == '/' || key == '=' || key == 'x')){
               
-             operation = key;
-//             printf("%c\n",operation);              
+             operation = key;            
            }
            
            else {}
@@ -127,20 +138,11 @@ void calcMode(){
            LCD_Cursor(1,i);
            i++;
            SysCtlDelay(8000000/3); //Delay              
-//           state = timer; 
            delay_ms(200);
 
 
         }
         
-        
-      LCD_Clear();
-      LCD_PrintLn(0,"Timer Mode");
-      LCD_PrintLn(1,"00:00");      
-
-        
-        
-        
-        
+   
         
 }

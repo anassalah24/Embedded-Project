@@ -1,18 +1,8 @@
-/****************************************************
-*  @file    Keypad.c
-*
-*  Key pad library to return the value of key pressed.
-*  generalized library could be used in diffrent sizes of keypads.
-*
-*  @author  Group Alpha
-*
-*  @date    29/11/2018 12:20 AM
-*
-****************************************************/   
+ 
 /*
 *  @Hardware Connentions
 *
-* [PE1 - PE4] -> [R1 - R4]  Raws
+* [PE1 - PE4] -> [R1 - R4]  Rows
 * [PC4 - PC7] -> [C1 - C4]  Cols
 *  
 ****************************************************/
@@ -24,12 +14,9 @@ unsigned const char symbol[padRows][padCols] = {{ '1', '2',  '3', '+'},
                                                 { '4', '5',  '6', '-'},      
                                                 { '7', '8',  '9', '/'},      
                                                 { 'x', '0',  'c', '='}}; 
+extern volatile int state;
 
-/**
-*  @detailed  This function initialize portCE to be ready for use upon the needed features. 
-*
-*  @param     All function registers are defined in TM4C123GH6PM.H file
-*/
+// This functions initializes port C and port E to be ready for use upon the needed features.
 void keypad_Init(void)
 {
   SYSCTL_RCGCGPIO_R |= 0x14;            //enable clc for port C & D  
@@ -44,15 +31,16 @@ void keypad_Init(void)
 
 }
 
-/**
-*  @detailed  This function returns the value of a key have been pressed at the moment the function had been called. 
-*             It simply makes a 2 loops one to find the column which contains the button 
-*             had been pressd and another loop to determine the row of that button. 
-*             Having these data the we could determine a unique value for each button.
-*/
-char keypad_getkey(void)
+
+//These function returns the value of a key have been pressed at the moment the function had been called. 
+//It simply makes a 2 loops one to find the column which contains the button 
+//had been pressd and another loop to determine the row of that button. 
+//Having these data the we could determine a unique value for each button.
+//They operate on a while loop as long as their state is the state of the specific mode 
+//for example keypad_getkeycalc will loop as long as I am in the calculator mode 
+char keypad_getkeycalc(void)
 {
-  while(1)
+  while(state == 1)
   {
     for(int i = 0; i < 4; i++)                        //columns traverse
     {
@@ -65,4 +53,42 @@ char keypad_getkey(void)
       }
     }
   }
+  return 'q';
+}
+
+
+char keypad_getkeytim(void)
+{
+  while(state == 2)
+  {
+    for(int i = 0; i < 4; i++)                        //columns traverse
+    {
+      GPIO_PORTC_DATA_R = (1U << i+4);
+      delay_us(2);
+      for(int j = 0; j < 4; j++)                     //raws traverse
+      {
+        if((GPIO_PORTE_DATA_R & 0x1E) & (1U << j+1))
+          return symbol[j][i];
+      }
+    }
+  }
+ return 'q';
+}
+
+char keypad_getkeystop(void)
+{
+  while(state == 3)
+  {
+    for(int i = 0; i < 4; i++)                        //columns traverse
+    {
+      GPIO_PORTC_DATA_R = (1U << i+4);
+      delay_us(2);
+      for(int j = 0; j < 4; j++)                     //raws traverse
+      {
+        if((GPIO_PORTE_DATA_R & 0x1E) & (1U << j+1))
+          return symbol[j][i];
+      }
+    }
+  }
+  return 'q';
 }
