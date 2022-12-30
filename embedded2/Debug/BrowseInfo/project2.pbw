@@ -116441,7 +116441,7 @@
     "display": "void initTimer(void)",
     "location": {
       "column": "6",
-      "line": "83",
+      "line": "84",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "initTimer",
@@ -116455,7 +116455,7 @@
     "display": "void initialValue(void)",
     "location": {
       "column": "6",
-      "line": "96",
+      "line": "97",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "initialValue",
@@ -116463,13 +116463,13 @@
     "scope": null
   },
   {
-    "ID": "c:timer.c@2829@F@initialValue@currentTimer",
+    "ID": "c:timer.c@2837@F@initialValue@currentTimer",
     "What": "Variable",
     "defdec": "Def",
     "display": "currentTimer",
     "location": {
       "column": "14",
-      "line": "97",
+      "line": "98",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "currentTimer",
@@ -116483,7 +116483,7 @@
     "display": "void timerMode(void)",
     "location": {
       "column": "6",
-      "line": "122",
+      "line": "123",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "timerMode",
@@ -116491,13 +116491,13 @@
     "scope": null
   },
   {
-    "ID": "c:timer.c@3687@F@timerMode@i",
+    "ID": "c:timer.c@3695@F@timerMode@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "13",
-      "line": "123",
+      "line": "124",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "i",
@@ -116505,13 +116505,13 @@
     "scope": null
   },
   {
-    "ID": "c:timer.c@3708@F@timerMode@key",
+    "ID": "c:timer.c@3716@F@timerMode@key",
     "What": "Variable",
     "defdec": "Def",
     "display": "key",
     "location": {
       "column": "23",
-      "line": "124",
+      "line": "125",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "key",
@@ -116519,13 +116519,13 @@
     "scope": null
   },
   {
-    "ID": "c:timer.c@4731@F@timerMode@ticks",
+    "ID": "c:timer.c@4739@F@timerMode@ticks",
     "What": "Variable",
     "defdec": "Def",
     "display": "ticks",
     "location": {
       "column": "21",
-      "line": "154",
+      "line": "155",
       "path": "D:\\Projects\\embedded2\\timer.c"
     },
     "name": "ticks",

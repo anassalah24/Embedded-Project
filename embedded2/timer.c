@@ -77,6 +77,7 @@ void timeuphandler(){
       else{
           seconds--;
       }
+      
   }
 
 //This function initiates all things related to Wtimer0 that is used in this mode
